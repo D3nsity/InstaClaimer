@@ -29,12 +29,12 @@ RESET   = '\033[39m'
 
 # Checking if program is up-to-date
 version = "2.5"
-check = requests.get(url = "https://raw.githubusercontent.com/itsunderscores/Instagram-Auto-Claimer-Swapper/main/version.txt")
+check = requests.get(url = "https://raw.githubusercontent.com/D3nsity/InstaClaimer/main/version.txt")
 if(version in check.text):
 	pass
 else:
-	print("This version is currently out of date and is recommended you download the updated one.")
-	print("https://github.com/itsunderscores/Instagram-Auto-Claimer-Swapper")
+	print("This version is currently out of date, install latest update")
+	print("https://github.com/d3nsity/InstaClaimer")
 	print(check)
 	exit()
 
@@ -42,14 +42,17 @@ else:
 
 global syn
 def header():
-	print(CRED+''' _              _           
-| |_ _   _ _ __| |__   ___  
-| __| | | | '__| '_ \ / _ \ 
-| |_| |_| | |  | |_) | (_) |
- \__|\__,_|_|  |_.__/ \___/ 
+	print(CRED+'''\n
+
+██╗███╗░░██╗░██████╗████████╗░█████╗░░█████╗░██╗░░░░░░█████╗░██╗███╗░░░███╗███████╗██████╗░
+██║████╗░██║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██║░░░░░██╔══██╗██║████╗░████║██╔════╝██╔══██╗
+██║██╔██╗██║╚█████╗░░░░██║░░░███████║██║░░╚═╝██║░░░░░███████║██║██╔████╔██║█████╗░░██████╔╝
+██║██║╚████║░╚═══██╗░░░██║░░░██╔══██║██║░░██╗██║░░░░░██╔══██║██║██║╚██╔╝██║██╔══╝░░██╔══██╗
+██║██║░╚███║██████╔╝░░░██║░░░██║░░██║╚█████╔╝███████╗██║░░██║██║██║░╚═╝░██║███████╗██║░░██║
+╚═╝╚═╝░░╚══╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░╚══════╝╚═╝░░╚═╝╚═╝╚═╝░░░░░╚═╝╚══════╝╚═╝░░╚═╝
 	''')
-	print(CRED+"[+] Instagram Turbo v" + version)
-	print(CRED+"[-] Developed by underscores#0001")
+	print(CRED+"[+] InstaClaimer v" + version)
+	print(CRED+"[-] Developed by underscores#0001 | Maintained by T.me/D3nsity")
 	print(WHITE+"-------------------------------------------------------"+YELLOW)
 
 def getproxy(file):
@@ -138,7 +141,7 @@ def login(username, password):
 			else:
 				break
 		except requests.ConnectionError:
-			print("[>] Connection timed out. Proxy is probably bad.")
+			print("[>] Connection Timed Out. Ya Proxy Is Shit Af Bruh.")
 			return
 
 	cookies = response.cookies
@@ -189,7 +192,7 @@ def login(username, password):
 
 	try:
 		if loadjson["error_type"] == "ip_block":
-			print(CRED+ "[!] This IP has been blocked. Waiting a few minutes before trying again.")
+			print(CRED+ "[!] This IP has been blocked. Waiting a few seconds before trying again.")
 			time.sleep(120)
 			bad = True
 			return "0"
